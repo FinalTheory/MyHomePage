@@ -528,12 +528,12 @@ body{
 	margin: 6em 0 1em;
 }
 .post-grid{
-	width: 28.33%;
+	width: 29.33%;
 	float: left;
 	margin-right: 5%;
 	text-align: center;
 	background: #FFF;
-	padding: 10px;
+	padding-bottom: 1em;
 	margin-bottom: 5em;
 	box-shadow: 0px 0px 10px rgba(238, 238, 238, 0.08);
 }
@@ -570,6 +570,7 @@ body{
 	background: url(../images/post-icon.png) no-repeat;
 }
 .post-grid h4 a{
+	padding: 10px;
 	color: #383838;
 	font-family: trebuchet ms,'open_sansregular';
 	font-size: 1.8em;
