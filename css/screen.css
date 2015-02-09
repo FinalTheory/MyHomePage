@@ -14,9 +14,9 @@
   min-width: 520px;
   height: 441px;
   position: relative;
-  margin: 30px auto;
+  margin: 30px auto 0;
   overflow: hidden;
-  background: transparent url(../images/waves.png) repeat 0% 0;
+  background: transparent repeat 0% 0;
   -webkit-transition: background-position 1.4s ease-in-out;
   -webkit-transition-delay: 0.3s;
   -moz-transition: background-position 1.4s ease-in-out 0.3s;

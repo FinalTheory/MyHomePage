@@ -59,7 +59,8 @@ body{
 	height: 36px;
 	width: 45px;
 	display: inline-block;
-	background: url(../images/logo-icon.png) no-repeat 0px 0px;
+	background: url(../images/logo-icon.ico) no-repeat 0px 0px;
+	background-size: 38px 38px;
 	vertical-align: initial;
 	margin-right: 7px;
 }
@@ -94,11 +95,11 @@ body{
 	-o-border-radius: 0.5em;
 	font-weight: 900;
 }
-.top-nav li.active> a, .top-nav li> a:hover {
+.link-out:hover, .top-nav li.active> a, .top-nav li> a:hover {
 	color: #A5D3DB;
 	background:#3A494C;
-	
 }
+
 .da-title h3{
 	width:50%;
 	letter-spacing: 0.03em;
@@ -527,12 +528,12 @@ body{
 	margin: 6em 0 1em;
 }
 .post-grid{
-	width: 29.33%;
+	width: 28.33%;
 	float: left;
 	margin-right: 5%;
 	text-align: center;
 	background: #FFF;
-	padding-bottom: 1em;
+	padding: 10px;
 	margin-bottom: 5em;
 	box-shadow: 0px 0px 10px rgba(238, 238, 238, 0.08);
 }
@@ -632,7 +633,7 @@ body{
 	resize:none;
 	margin-bottom:1em;
 }
-.contatct-form input[type="submit"]{
+.contatct-form input[type="button"]{
 	background: #FFFFFF;
 	color: #5E5E5E;
 	border-radius: 0.5em;
@@ -653,7 +654,7 @@ body{
 	-o-transition: 0.5s all;
 	font-family: 'open_sansregular';
 }
-.contatct-form input[type="submit"]:hover{
+.contatct-form input[type="button"]:hover{
 	background: #323232;
 	color: #FFF;
 }
@@ -880,7 +881,7 @@ body{
 		width: 80%;
 		margin: 2em auto;
 	}
-	.contatct-form input[type="submit"] {
+	.contatct-form input[type="button"] {
 		width: 30%;
 	}
 	.post-grid {
@@ -991,7 +992,7 @@ body{
 		width: 80%;
 		margin: 2em auto;
 	}
-	.contatct-form input[type="submit"] {
+	.contatct-form input[type="button"] {
 		width: 40%;
 		padding: 1.2em 1.1em;
 	}
@@ -1127,7 +1128,7 @@ body{
 		width:100%;
 		margin: 2em auto;
 	}
-	.contatct-form input[type="submit"] {
+	.contatct-form input[type="button"] {
 		width: 40%;
 		padding: 0.78em 1.1em;
 		font-size:1.2em;
@@ -1299,7 +1300,7 @@ body{
 		width:100%;
 		margin: 1em auto;
 	}
-	.contatct-form input[type="submit"] {
+	.contatct-form input[type="button"] {
 		width: 100%;
 		padding: 0.6em 1.1em;
 		font-size: 1em;
@@ -1435,4 +1436,8 @@ body{
 		float: none;
 		text-align:center;
 	}
+}
+
+* {
+	font-family:"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif!important;
 }
