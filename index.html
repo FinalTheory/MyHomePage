@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Dreams of a Final Theory</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/>
+    <![endif]-->
+</head>
+<body class="loading">
+<div id="wrapper">
+    <div id="bg"></div>
+    <div id="overlay"></div>
+    <div id="main">
+
+        <!-- Header -->
+        <header id="header">
+            <h1>黄龑</h1>
+
+            <p id="self_label">　　</p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="http://blog.finaltheory.me" class="icon fa-book"><span class="label">Blog</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/FinalTheory" class="icon fa-github"><span
+                                class="label">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="mailto:FinalTheory@hotmail.com" class="icon fa-envelope-o"><span
+                                class="label">Email</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <span class="copyright">&copy; FinalTheory. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+        </footer>
+
+    </div>
+</div>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+
+<script src="assets/js/jquery.min.js"></script>
+<script>
+
+    /*
+     Edit here to modify parameters
+     */
+    var wordList = [
+        '技术宅', '吃货', '洁癖',
+        '强迫症', 'GEEK', '码农',
+        '逗逼', '自由主义', '伪二次元'
+    ];
+
+    var num_labels = 3;
+    var show_time = 6000;
+    var time_interval = 1000;
+
+    /*
+     ********************************
+     */
+
+    // The Fisher-Yates (Knuth) Shuffle Algorithm
+    // See also: https://github.com/coolaj86/knuth-shuffle
+    //           http://bost.ocks.org/mike/shuffle/
+    var index_var = 0;
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    }
+
+    // generate random label string
+    function strGenerateLabel() {
+        var newList = wordList.slice(index_var,
+                Math.min(index_var + num_labels, wordList.length));
+        index_var += num_labels;
+        if (index_var >= wordList.length) {
+            index_var = 0;
+        }
+        return newList.join(" · ");
+    }
+
+    // random change labels
+    function changeLabel() {
+        var obj = $("#self_label");
+        setTimeout(
+                function () {
+                    $("#self_label").text(strGenerateLabel());
+                },
+                time_interval
+        );
+        obj.fadeOut(time_interval);
+        obj.fadeIn(time_interval);
+    }
+
+    $(document).ready(function () {
+        // shuffle the label array
+        shuffle(wordList);
+        $("#self_label").text(strGenerateLabel());
+        window.setInterval(changeLabel, show_time);
+    });
+
+    window.onload = function () {
+        document.body.className = '';
+    };
+    window.ontouchmove = function () {
+        return false;
+    };
+    window.onorientationchange = function () {
+        document.body.scrollTop = 0;
+    }
+</script>
+</body>
+</html>
