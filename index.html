@@ -125,7 +125,9 @@
         // shuffle the label array
         shuffle(wordList);
         $("#self_label").text(strGenerateLabel());
-        window.setInterval(changeLabel, show_time);
+        window.setTimeout(function() {
+            window.setInterval(changeLabel, show_time);
+        }, 2000);
     });
 
     window.onload = function () {
