@@ -13,6 +13,7 @@
     <script src="assets/js/ie/html5shiv.js"></script>
     <![endif]-->
     <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="assets/css/custom.css"/>
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="assets/css/ie8.css"/>
     <![endif]-->
@@ -41,6 +42,10 @@
                                 class="label">Github</span></a>
                     </li>
                     <li>
+                        <a href="#" onclick="openWindow()" id="contact_weixin" class="icon fa-weixin">
+                            <span class="label">Weixin</span></a>
+                    </li>
+                    <li>
                         <a href="mailto:FinalTheory@hotmail.com" class="icon fa-envelope-o"><span
                                 class="label">Email</span></a>
                     </li>
@@ -55,8 +60,14 @@
 
     </div>
 </div>
+<div id="light_weixin" class="white_content">
+    <img src='assets/img/weixin_qr.png'/>
+</div>
+<div id="fade" class="black_overlay" onClick="closeWindow()">
+</div>
 <!--[if lte IE 8]>
-<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/ie/respond.min.js"></script>
+<![endif]-->
 
 <script src="assets/js/jquery.min.js"></script>
 <script>
@@ -73,6 +84,7 @@
     var num_labels = 3;
     var show_time = 6000;
     var time_interval = 1000;
+    var qr_speed = 'normal';
 
     /*
      ********************************
@@ -125,10 +137,19 @@
         // shuffle the label array
         shuffle(wordList);
         $("#self_label").text(strGenerateLabel());
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             window.setInterval(changeLabel, show_time);
         }, 2000);
     });
+
+    function openWindow() {
+        $("#fade").fadeIn(qr_speed);
+        $("#light_weixin").fadeIn(qr_speed);
+    }
+    function closeWindow() {
+        $("#light_weixin").fadeOut(qr_speed);
+        $("#fade").fadeOut(qr_speed);
+    }
 
     window.onload = function () {
         document.body.className = '';
